@@ -10,7 +10,7 @@ pipeline {
         }
        stage("Build docker image inside docker") {
             steps {
-                sh 'docker build -t test-image'
+                sh 'docker build -t test-image .'
             }
         }
        stage("go inside ubunto continer") {
