@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Inside docker continer1") {
             steps {
-                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker'
+                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock docker'
                 sh 'docker pull ubuntu'
                 sh 'docker imges'
             }
@@ -15,7 +15,7 @@ pipeline {
         }
        stage("go inside ubunto continer") {
             steps {
-                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock -ti test-image'
+                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock test-image'
                 sh 'docker run hello-world'
                 sh 'docker imges'
                 sh 'docker ps'
